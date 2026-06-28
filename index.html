@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajendra Kumar; Python Developer</title>
+<meta name="description" content="Portfolio of Rajendra Kumar, Python &amp; AI developer. Projects, skills, and experience in backend, automation, and machine learning.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__terminal">
+    <span class="preloader__prompt">;_</span>
+    <span class="preloader__text" id="preloaderText"></span>
+  </div>
+  <div class="preloader__bar"><span id="preloaderProgress"></span></div>
+</div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ============ SKIP LINK ============ -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="navbar" id="navbar">
+  <nav class="navbar__inner" aria-label="Primary">
+    <a href="#home" class="navbar__logo">
+      <span class="navbar__logo-bracket">&lt;</span>Rajendra<span class="navbar__logo-accent">.dev</span><span class="navbar__logo-bracket">/&gt;</span>
+    </a>
+
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="#home" class="navlink" data-section="home">home</a></li>
+      <li><a href="#about" class="navlink" data-section="about">about</a></li>
+      <li><a href="#skills" class="navlink" data-section="skills">skills</a></li>
+      <li><a href="#projects" class="navlink" data-section="projects">projects</a></li>
+      <li><a href="#timeline" class="navlink" data-section="timeline">journey</a></li>
+      <li><a href="#services" class="navlink" data-section="services">services</a></li>
+      <li><a href="#testimonials" class="navlink" data-section="testimonials">reviews</a></li>
+      <li><a href="#contact" class="navlink" data-section="contact">contact</a></li>
+    </ul>
+
+    <div class="navbar__actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode" aria-pressed="false">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="navbar__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__bg" aria-hidden="true">
+      <canvas id="particleCanvas"></canvas>
+      <div class="hero__glow hero__glow--cyan"></div>
+      <div class="hero__glow hero__glow--violet"></div>
+      <div class="hero__grid"></div>
+    </div>
+
+    <div class="hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow"><span class="dot-blink"></span> available for new opportunities</p>
+
+        <div class="hero__terminal" role="group" aria-label="Animated introduction">
+          <div class="hero__terminal-bar">
+            <span class="hero__terminal-dot hero__terminal-dot--red"></span>
+            <span class="hero__terminal-dot hero__terminal-dot--yellow"></span>
+            <span class="hero__terminal-dot hero__terminal-dot--green"></span>
+            <span class="hero__terminal-title">rajendranimmagadda123@gmail.com</span>
+          </div>
+          <div class="hero__terminal-body">
+            <p class="hero__line"><span class="hero__prompt"></span></p>
+            <h1 class="hero__name">
+              Rajendra Kumar
+            </h1>
+            <p class="hero__line"><span class="hero__prompt"></span> Python Dev</p>
+            <p class="hero__role">
+              <span id="typedRole"></span><span class="hero__cursor">&#9608;</span>
+            </p>
+          </div>
+        </div>
+
+        <p class="hero__bio">
+          I build clean, efficient software &mdash; from automation scripts to full-stack apps and
+          machine learning systems. Currently exploring the intersection of <span class="hl">Python</span>,
+          <span class="hl">AI</span>, and <span class="hl">good engineering practice</span>.
+        </p>
+
+        <div class="hero__cta">
+          <a href="resume.pdf" class="btn btn--primary" download>
+            <span>Download R&eacute;sum&eacute;</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          </a>
+          <a href="#contact" class="btn btn--ghost">
+            <span>Hire Me</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="hero__socials" aria-label="Social links">
+          <a href="https://github.com/" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.27-.01-1.17-.02-2.13-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 015.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.09 0 4.42-2.7 5.4-5.27 5.68.42.36.78 1.08.78 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.67.8.56A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href="mailto:rajendranimmagadda123@gmail.com" class="social-icon" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
+          </a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.9 1.9h3.6l-7.9 9 9.3 11.2h-7.3L11 14.9l-6.2 7.2H1.2l8.4-9.6L.6 1.9H8l5.4 6.6 5.5-6.6z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__portrait">
+          <div class="hero__portrait-ring"></div>
+          <div class="hero__portrait-img" role="img" aria-label="Photo of Aarav Sharma">
+            <span class="hero__portrait-placeholder">RK</span>
+          </div>
+          <div class="hero__portrait-badge hero__portrait-badge--1">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            Python
+          </div>
+          <div class="hero__portrait-badge hero__portrait-badge--2">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.9 2.9M16.9 16.9l2.9 2.9M1 12h4M19 12h4M4.2 19.8l2.9-2.9M16.9 7.1l2.9-2.9"/></svg>
+            AI/ML
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="hero__scroll-cue" aria-label="Scroll to About section">
+      <span>scroll</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">Who I Am</h2>
+
+      <div class="about__grid">
+        <div class="about__text">
+          <p>
+            I'm <strong>Rajendra Kumar</strong>, a Python-focused software developer who enjoys
+            turning ambiguous problems into reliable, well-tested systems. My background spans
+            backend APIs, desktop tooling, automation, and applied machine learning.
+          </p>
+          <p>
+            I care about code that's easy to read six months later &mdash; clear structure,
+            sensible names, and just enough comments. Outside of client work, I'm usually
+            deep in a side project or contributing to open source.
+          </p>
+
+          <div class="about__facts">
+            <div class="about__fact">
+              <span class="about__fact-label">Education</span>
+              <span class="about__fact-value">B.Tech, Computer Science Engineering(AI&Ml); [Bomma Institute of Technology and Science]</span>
+            </div>
+            <div class="about__fact">
+              <span class="about__fact-label">Experience</span>
+              <span class="about__fact-value">building production Python systems</span>
+            </div>
+            <div class="about__fact">
+              <span class="about__fact-label">Objective</span>
+              <span class="about__fact-value">Backend / AI engineering roles solving real-world problems</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__counters">
+          <div class="counter-card">
+            <span class="counter-card__num" data-target="6" data-suffix="+">0</span>
+            <span class="counter-card__label">Projects Built</span>
+          </div>
+          <div class="counter-card">
+            <span class="counter-card__num" data-target="1" data-suffix="+">0</span>
+            <span class="counter-card__label">Certificates</span>
+          </div>
+          <div class="counter-card">
+            <span class="counter-card__num" data-target="6" data-suffix="+">0</span>
+            <span class="counter-card__label">Technologies</span>
+          </div>
+          <div class="counter-card">
+            <span class="counter-card__num" data-target="3000" data-suffix="+">0</span>
+            <span class="counter-card__label">Coding Hours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section--alt" id="skills">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">Tools I Reach For</h2>
+
+      <div class="skills__grid" id="skillsGrid">
+        <!-- populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">Selected Work</h2>
+
+      <div class="projects__filter" id="projectFilter" role="tablist" aria-label="Filter projects by technology">
+        <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI / ML</button>
+        <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+        <button class="filter-btn" data-filter="desktop" role="tab" aria-selected="false">Desktop</button>
+      </div>
+
+      <div class="projects__grid" id="projectsGrid">
+        <!-- populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="section section--alt" id="timeline">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">Education &amp; Learning Path</h2>
+
+      <div class="timeline" id="timelineList">
+        <!-- populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section" id="certifications">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">Certifications</h2>
+
+      <div class="certs__grid" id="certsGrid">
+        <!-- populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACHIEVEMENTS ============ -->
+  <section class="section section--alt" id="achievements">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">Milestones</h2>
+
+      <div class="achievements__grid" id="achievementsGrid">
+        <!-- populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section" id="services">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">What I Can Build For You</h2>
+
+      <div class="services__grid" id="servicesGrid">
+        <!-- populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section section--alt" id="testimonials">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">What People Say</h2>
+
+      <div class="testimonials" id="testimonialsWrap">
+        <div class="testimonials__track" id="testimonialsTrack">
+          <!-- populated by script.js -->
+        </div>
+        <div class="testimonials__controls">
+          <button class="testimonials__arrow" id="testimonialPrev" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="testimonials__dots" id="testimonialDots"></div>
+          <button class="testimonials__arrow" id="testimonialNext" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GITHUB STATS ============ -->
+  <section class="section" id="github-stats">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">Open Source Footprint</h2>
+
+      <div class="ghstats__grid" id="ghStatsGrid">
+        <!-- populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section--alt" id="contact">
+    <div class="section__inner">
+      <p class="section__eyebrow"></p>
+      <h2 class="section__title">Let's Build Something</h2>
+
+      <div class="contact__grid">
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" required autocomplete="name">
+              <span class="form-error" data-for="cf-name"></span>
+            </div>
+            <div class="form-field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required autocomplete="email">
+              <span class="form-error" data-for="cf-email"></span>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" required>
+            <span class="form-error" data-for="cf-subject"></span>
+          </div>
+          <div class="form-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+            <span class="form-error" data-for="cf-message"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--send" id="sendBtn">
+            <span class="btn__label">Send Message</span>
+            <span class="btn__spinner" aria-hidden="true"></span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <p class="contact__success" id="contactSuccess" role="status" aria-live="polite">
+            I'll get back to you within a day or two.
+          </p>
+        </form>
+
+        <div class="contact__info">
+          <a href="mailto:rajendranimmagadda123@gmail.com" class="contact__info-item">
+            <span class="contact__info-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
+            </span>
+            <span>
+              <span class="contact__info-label">Email</span>
+              <span class="contact__info-value">rajendranimmagadda123@gmail.com</span>
+            </span>
+          </a>
+          <a href="tel:+910000000000" class="contact__info-item">
+            <span class="contact__info-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.32 1.9.57 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.25 1.85.44 2.81.57A2 2 0 0122 16.92z"/></svg>
+            </span>
+            <span>
+              <span class="contact__info-label">Phone</span>
+              <span class="contact__info-value">+91 6305054882</span>
+            </span>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" class="contact__info-item">
+            <span class="contact__info-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </span>
+            <span>
+              <span class="contact__info-label">LinkedIn</span>
+              <span class="contact__info-value">/in/aaravsharma</span>
+            </span>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="contact__info-item">
+            <span class="contact__info-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.27-.01-1.17-.02-2.13-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 015.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.09 0 4.42-2.7 5.4-5.27 5.68.42.36.78 1.08.78 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.67.8.56A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            </span>
+            <span>
+              <span class="contact__info-label">GitHub</span>
+              <span class="contact__info-value">github.com/Rajendrark9</span>
+            </span>
+          </a>
+          <div class="contact__info-item contact__info-item--static">
+            <span class="contact__info-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span>
+              <span class="contact__info-label">Location</span>
+              <span class="contact__info-value">Bengaluru, India</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a href="#home" class="navbar__logo">
+        <span class="navbar__logo-bracket"></span>Rajendra<span class="navbar__logo-accent">.dev</span><span class="navbar__logo-bracket">/&gt;</span>
+      </a>
+      <p>Python developer crafting clean software and intelligent systems.</p>
+    </div>
+
+    <div class="footer__links">
+      <span class="footer__heading">Quick Links</span>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer__socials">
+      <span class="footer__heading">Find Me</span>
+      <div class="footer__social-icons">
+        <a href="https://github.com/Rajendrark9" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.27-.01-1.17-.02-2.13-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 015.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.09 0 4.42-2.7 5.4-5.27 5.68.42.36.78 1.08.78 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.67.8.56A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:rajendranimmagadda123@gmail.com" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>&copy; <span id="year"></span>Rajendra Kumar. Built with HTML, CSS &amp; JavaScript.</p>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
