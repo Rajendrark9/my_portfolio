@@ -390,7 +390,10 @@
           </ul>
           <div class="project-card__links">
             <a href="https://github.com/Rajendrark9" target="_blank" rel="noopener">GitHub</a>
-            <a href="#" class="is-primary" onclick="return false;">Live Demo</a>
+            <a href="https://employee-salary-prediction-five.vercel.app/"
+   class="is-primary"
+   target="_blank"
+   rel="noopener noreferrer">Live Demo</a>
           </div>
         </div>
       </article>
