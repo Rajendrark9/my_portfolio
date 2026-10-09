@@ -282,7 +282,7 @@
   ];
 
   const PROJECTS = [
-    { title: "AI Attendance System", cat: "ai", desc: "Face-recognition based attendance tracker with live camera feed and automated logging.", stack: ["Python", "OpenCV", "Flask"], features: ["Real-time face detection", "CSV/DB attendance export", "Admin dashboard"] },
+    { title: "Employee Salary Prediction", cat: "ai", desc: "Developed a machine learning application using Python, Pandas, and Scikit-learn to predict employee salaries based on age, experience, education, department, city, and previous salary. Built a Random Forest Regression model and integrated it with FastAPI to provide salary predictions through a web interface.", stack: ["Python, Pandas, Scikit-learn, Random Forest, FastAPI, HTML, CSS, JavaScript"], features: ["Salary prediction","Employee data analysis","ML model evaluation","FastAPI integration","Interactive web UI"] },
     { title: "Movie Ticket Booking System", cat: "web", desc: "Full-stack booking platform with seat selection and payment simulation.", stack: ["Django", "PostgreSQL", "JS"], features: ["Interactive seat map", "Booking history", "Email confirmation"] },
     { title: "Voice Assistant", cat: "desktop", desc: "Desktop voice assistant that handles tasks, reminders, and web queries via speech.", stack: ["Python", "SpeechRecognition", "pyttsx3"], features: ["Voice commands", "Task automation", "Offline fallback mode"] },
     { title: "Hospital Management System", cat: "web", desc: "Patient records, appointment scheduling, and billing in one dashboard.", stack: ["Flask", "MySQL", "Bootstrap"], features: ["Role-based access", "Appointment calendar", "Invoice generation"] },
